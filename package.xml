@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Flo2Cash_Web_Payment</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl - 3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Process payments through the Flo2Cash payment gateway direct from Magento</summary>
+    <description>The Flo2Cash Magento extension allows you to offer the Flo2Cash payment gateway to you customers at checkout.  Payments will be processed through your Flo2Cash account where you can use all the great Flo2Cash tools for managing these through your Merchant Console.  Visit Flo2Cash at www.flo2cash.co.nz to sign up and start accepting credit card payments through Magento.</description>
+    <notes>This is a complete update from version 1.0 of the Flo2Cash extension.</notes>
+    <authors><author><name>Flo2Cash</name><user>f2cshoppingcartdev</user><email>shoppingcartdev@flo2cash.co.nz</email></author></authors>
+    <date>2014-04-03</date>
+    <time>20:59:39</time>
+    <contents><target name="magecommunity"><dir name="F2C"><dir name="Flo2cash"><dir name="Helper"><file name="Data.php" hash="2b801ed1afd534ad7ddd9909bd24ecca"/></dir><dir name="Model"><file name="Flo2cash.php" hash="22e7e386d15d9ff5c9233c3529ca65d8"/></dir><dir name="controllers"><file name="Flo2cashController.php" hash="0f156426c3c9c12e9ddce38d4045b29a"/></dir><dir name="etc"><file name="config.xml" hash="4cb9f7e0a3b03c11a7ba077f75c65ca0"/><file name="system.xml" hash="8bf0d3e6b67764bdb484659836b814ba"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="F2C_Flo2cash.xml" hash="7742e5aebd02d4c65be74c967b00e7be"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Flo2Cash Payment Gateway
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ */
+-->
+<config>
+    <sections>
+        <payment translate="label" module="payment">
+        	<groups>
+			  <flo2cash translate="label" module="flo2cash">
+				  <label>Flo2Cash</label>
+				  <sort_order>670</sort_order>
+				  <show_in_default>1</show_in_default>
+				  <show_in_website>1</show_in_website>
+				  <show_in_store>0</show_in_store>
+				  <fields>
+					  <active translate="label">
+						  <label>Enabled: (required)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_yesno</source_model>
+						  <sort_order>1</sort_order>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>0</show_in_store>
+					  </active>					
+					  <title translate="label">
+						  <label>Title: (required)</label>
+						  <frontend_type>text</frontend_type>
+						  <sort_order>2</sort_order>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>0</show_in_store>
+					  </title>
+					  <demo_mode translate="label">
+						  <label>Demo mode: (required)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_yesno</source_model>
+						  <sort_order>3</sort_order>
+                                                  <comment>Live or Demo mode</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>0</show_in_store>
+					  </demo_mode>  
+ 					  <account_id translate="label">
+						  <label>Account ID: (required)</label>
+						  <frontend_type>text</frontend_type>
+						  <sort_order>6</sort_order>
+                                                  <comment>Account ID issued by Flo2Cash</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </account_id>
+                                          <new_order_status translate="label">
+						  <label>New order status: (optional)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_order_status</source_model>
+						  <sort_order>7</sort_order>
+                                                  <comment>The default status for a new order is 'Pending'. The first option of the dropdown list will be the default state if 'Pending' cannot be found in the database. If you would like this to be set to a different status before redirecting to Flo2Cash select this status here.</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </new_order_status>
+                                           <payment_accepted_order_status translate="label">
+						  <label>Order status when payment successful: (optional)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_order_status</source_model>
+						  <sort_order>8</sort_order>
+                                                  <comment>Orders will be moved to this status when a payment is successful. If no option is chosen then the order will be moved to 'Processing'. The first option of the dropdown list will be the default state if 'Processing' cannot be found in the database.</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </payment_accepted_order_status>
+                                          <payment_refused_order_status translate="label">
+						  <label>Order status when payment failed: (optional)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_order_status</source_model>
+						  <sort_order>9</sort_order>
+                                                  <comment>Orders will be moved to this status when a payment is not successful. If no option is chosen then the order will be moved to 'Closed'. The first option of the dropdown list will be the default state if 'Closed' cannot be found in the database.</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </payment_refused_order_status>
+ 					  <header_image translate="label">
+						  <label>Header image URL: (optional)</label>
+						  <frontend_type>text</frontend_type>
+						  <sort_order>10</sort_order>
+                                                  <comment>URL of image displayed at top of payment page, max size: 750px wide by 90px high, must be URL encoded and stored on secure (HTTPS) server</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </header_image>						
+ 					  <bottom_header_border_color translate="label">
+						  <label>Header border colour: (optional)</label>
+						  <frontend_type>text</frontend_type>
+						  <sort_order>11</sort_order>
+                                                  <comment>This sets the colour of the bottom border of the payment page header.  Values should be in hexadecimal e.g. FFFFFF for white. </comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </bottom_header_border_color>						
+ 					  <header_bg_color translate="label">
+						  <label>Header background colour: (optional)</label>
+						  <frontend_type>text</frontend_type>
+						  <sort_order>12</sort_order>
+                                                  <comment>This sets the colour of the payment page header background.  Values should be in hexadecimal e.g. FFFFFF for white.</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>1</show_in_store>
+					  </header_bg_color>						
+					  <store_card translate="label">
+						  <label>Save card: (required)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_yesno</source_model>
+						  <sort_order>13</sort_order>
+                                                  <comment>Whether the option for saving and tokenising the card details upon a successful payment should be shown to the customer</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>0</show_in_store>
+					  </store_card>
+					  <display_email translate="label">
+						  <label>Display receipt email: (required)</label>
+						  <frontend_type>select</frontend_type>
+						  <source_model>adminhtml/system_config_source_yesno</source_model>
+						  <sort_order>15</sort_order>
+                                                  <comment>Whether the option for sending an emailed payment receipt from Flo2Cash should be shown to the customer</comment>
+						  <show_in_default>1</show_in_default>
+						  <show_in_website>1</show_in_website>
+						  <show_in_store>0</show_in_store>
+					  </display_email>
+                                          
+				  </fields>
+			  </flo2cash>
+        	</groups>
+        </payment>
+    </sections>
+</config>

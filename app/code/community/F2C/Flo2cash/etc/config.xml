@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Flo2Cash Payment Gateway
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ */
+-->
+
+<config>
+    <modules>
+        <F2C_Flo2cash>
+            <version>1.1</version>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </F2C_Flo2cash>
+    </modules>
+    <global>
+    	<models>
+    		<flo2cash>
+	    		<class>F2C_Flo2cash_Model</class>
+	    	</flo2cash>
+    	</models>        
+    	<helpers>
+    		<flo2cash>
+    			<class>F2C_Flo2cash_Helper</class>
+    		</flo2cash>
+    	</helpers>
+        <resources>
+            <flo2cash_setup>
+                <setup>
+                    <module>F2C_Flo2cash</module>
+                </setup>
+                <connection>
+                    <use>directory_setup</use>
+                </connection>
+            </flo2cash_setup>
+            <flo2cash_write>
+                <connection>
+                    <use>local_write</use>
+                </connection>
+            </flo2cash_write>
+            <flo2cash_read>
+                <connection>
+                    <use>local_read</use>
+                </connection>
+            </flo2cash_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <flo2cash>
+                <use>standard</use>
+                <args>
+                    <module>F2C_Flo2cash</module>
+                    <frontName>flo2cash</frontName>
+                </args>
+            </flo2cash>
+        </routers>
+    </frontend>
+    <default>
+        <payment>
+            <flo2cash>
+                <active>0</active>
+                <title>Flo2Cash Payment Gateway</title>
+                <model>flo2cash/Flo2cash</model>
+                <demo_mode>1</demo_mode>
+                <account_id></account_id>
+                <new_order_status>Pending</new_order_status>
+                <payment_accepted_order_status>Processing</payment_accepted_order_status>
+                <payment_refused_order_status>Close</payment_refused_order_status>
+                <title>Flo2Cash Payment Gateway</title>
+                <header_image></header_image>
+                <bottom_header_border_color></bottom_header_border_color>
+                <header_bg_color></header_bg_color>
+                <store_card>0</store_card>
+                <display_email>1</display_email>		
+            </flo2cash>
+        </payment>
+    </default>
+</config>
